@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer utilities {
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+body {
+    @apply antialiased text-gray-900 bg-[#F6F7F9];
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Ensure all buttons show pointer cursor on hover */
+button {
+    cursor: pointer;
+}
+
+/* Custom shadows for premium feel */
+.shadow-card {
+    box-shadow: 0px 10px 30px rgba(17, 38, 146, 0.05);
+}
+
+.shadow-active {
+    box-shadow: 0px 10px 20px rgba(53, 99, 233, 0.3);
+}
+
+/* Transitions */
+.transition-standard {
+    @apply transition-all duration-300 ease-in-out;
+}
+
+/* Fade-up animation */
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-up {
+    animation: fade-up 0.3s ease-out;
+}
