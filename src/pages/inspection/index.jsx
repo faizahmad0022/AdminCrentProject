@@ -1,8 +1,8 @@
 "use client";
-import NissanGTRImg from '../../assets/Nissan-GT-R.png';
 import CarVerticaleBackground from '../../assets/Car-verticale-background.png';
 import tyreimg from '../../assets/tyreimg.png';
 import { Upload, Check, ChevronDown } from 'lucide-react';
+import BookingHeaderCard from '../../components/BookingHeaderCard';
 
 const conditions = [
   'Scratches/Dent',
@@ -16,48 +16,7 @@ const conditions = [
 const Inspection = () => {
   return (
     <div className="bg-[#F8F8F8]">
-      {/* TOP CARD */}
-      <div className="bg-white rounded-[16px] shadow-[0px_2px_12px_rgba(0,0,0,0.06)] px-5 py-4 flex flex-col sm:flex-row items-center justify-between gap-8">
-        
-        {/* Left */}
-        <div className="flex items-center gap-4">
-          <div className="w-12 h-12 rounded-md overflow-hidden bg-[#F5F5F5]">
-            <img
-              src="/assets/User profile picture.png"
-              alt="Zaid Jawad"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div>
-            <p className="text-[17px] font-bold text-[#1A202C]">Zaid Jawad</p>
-            <p className="text-[13px] text-[#888888]">Car Booking</p>
-          </div>
-        </div>
-
-        {/* Middle */}
-        <div className="flex items-center gap-4">
-          <div className="w-20 h-20 flex items-center justify-center">
-            <img src={NissanGTRImg} alt="Nissan GT-R" className="w-full h-full object-contain" />
-          </div>
-          <div>
-            <p className="text-[17px] font-bold text-[#1A202C]">Nissan GT-R</p>
-            <p className="text-[13px] text-[#888888]">Sport Car</p>
-          </div>
-        </div>
-
-        {/* Right */}
-        <div className="flex items-center gap-6 flex-wrap justify-end">
-          <span className="text-[17px] font-bold text-[#1A202C]">Add Schedule</span>
-          <div className="flex items-center gap-3">
-            <button className="cursor-pointer px-6 py-2.5 rounded-[8px] bg-[#DDEFFF] text-[#1A202C] text-[15px] font-medium">
-              Previous
-            </button>
-            <button className="cursor-pointer px-6 py-2.5 rounded-[8px] bg-[#2563EB] text-white text-[15px] font-medium">
-              Next
-            </button>
-          </div>
-        </div>
-      </div>
+      <BookingHeaderCard />
 
       {/* IMAGE SECTION */}
       <div className="relative mt-20">

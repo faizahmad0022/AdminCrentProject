@@ -112,29 +112,26 @@ const CustomerProfileDocument = () => {
               <button
                 type="button"
                 onClick={() => setActiveTab(TAB_KEYS.TRIP_DETAILS)}
-                className={`cursor-pointer w-[192px] rounded-[10px] px-6 py-4 text-[14px] font-bold transition-colors ${
-                  activeTab === TAB_KEYS.TRIP_DETAILS
+                className={`cursor-pointer w-[192px] rounded-[10px] px-6 py-4 text-[14px] font-bold transition-colors ${activeTab === TAB_KEYS.TRIP_DETAILS
                     ? "mt-2.5 mb-2.5 bg-[#3563E9] text-white"
                     : "ml-2.5 mr-2.5 bg-white text-[#1A202C] hover:bg-gray-50"
-                }`}
+                  }`}
               >
                 Trip Details
               </button>
               <button
                 type="button"
                 onClick={() => setActiveTab(TAB_KEYS.LICENSE)}
-                className={`cursor-pointer w-[192px] rounded-[10px] px-6 py-4 text-[14px] font-bold transition-colors ${
-                  activeTab === TAB_KEYS.LICENSE ? "mt-2.5 mb-2.5 bg-[#3563E9] text-white" : "ml-2.5 mr-2.5 bg-white text-[#1A202C] hover:bg-gray-50"
-                }`}
+                className={`cursor-pointer w-[192px] rounded-[10px] px-6 py-4 text-[14px] font-bold transition-colors ${activeTab === TAB_KEYS.LICENSE ? "mt-2.5 mb-2.5 bg-[#3563E9] text-white" : "ml-2.5 mr-2.5 bg-white text-[#1A202C] hover:bg-gray-50"
+                  }`}
               >
                 License
               </button>
               <button
                 type="button"
                 onClick={() => setActiveTab(TAB_KEYS.DOCUMENT)}
-                className={`cursor-pointer w-[192px] rounded-[10px] px-6 py-4 text-[14px] font-bold transition-colors ${
-                  activeTab === TAB_KEYS.DOCUMENT ? "mt-2.5 mb-2.5 bg-[#3563E9] text-white" : "ml-2.5 mr-2.5 bg-white text-[#1A202C] hover:bg-gray-50"
-                }`}
+                className={`cursor-pointer w-[192px] rounded-[10px] px-6 py-4 text-[14px] font-bold transition-colors ${activeTab === TAB_KEYS.DOCUMENT ? "mt-2.5 mb-2.5 bg-[#3563E9] text-white" : "ml-2.5 mr-2.5 bg-white text-[#1A202C] hover:bg-gray-50"
+                  }`}
               >
                 Document
               </button>
@@ -164,8 +161,8 @@ const CustomerProfileDocument = () => {
                         <td className="px-6 py-6">
                           <button
                             type="button"
-className="cursor-pointer w-[50px] h-10 rounded-[10px] bg-[#3563E9] text-white flex items-center justify-center hover:bg-[#2d52c4] transition-colors border-0"
-                                            aria-label="View details"
+                            className="cursor-pointer w-[50px] h-10 rounded-[10px] bg-[#3563E9] text-white flex items-center justify-center hover:bg-[#2d52c4] transition-colors border-0"
+                            aria-label="View details"
                           >
                             <img src={eyeIcon} alt="View" className="w-4 h-4 brightness-0 invert" />
                           </button>
@@ -218,15 +215,15 @@ className="cursor-pointer w-[50px] h-10 rounded-[10px] bg-[#3563E9] text-white f
                       <p className="text-[14px] text-[#90A3BF] font-medium leading-relaxed">{doc.description}</p>
                       <div className="flex flex-wrap gap-2">
                         {doc.files.map((file) => (
-                            <button
-                              key={file.name}
-                              type="button"
-                              className="cursor-pointer inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-[#F1F3F9] bg-[#F6F7F9] text-[#1A202C] text-[13px] font-semibold hover:bg-[#EEF1F5] transition-colors"
-                            >
-                              <img src={file.iconSrc} alt="" className="w-4 h-4" />
-                              {file.name}
-                            </button>
-                          ))}
+                          <button
+                            key={file.name}
+                            type="button"
+                            className="cursor-pointer inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-[#F1F3F9] bg-[#F6F7F9] text-[#1A202C] text-[13px] font-semibold hover:bg-[#EEF1F5] transition-colors"
+                          >
+                            <img src={file.iconSrc} alt="" className="w-4 h-4" />
+                            {file.name}
+                          </button>
+                        ))}
                       </div>
                     </div>
                   ))}

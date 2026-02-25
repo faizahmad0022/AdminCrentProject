@@ -10,8 +10,8 @@ import {
     Droplet,
     ChevronDown,
 } from "lucide-react";
-import NissanGTRImg from "../../assets/Nissan-GT-R.png";
 import smalllookcar from "../../assets/smalllookcar.png"; // Your blue car image
+import BookingHeaderCard from "../../components/BookingHeaderCard";
 
 const PaymentForm = () => {
     const navigate = useNavigate();
@@ -40,34 +40,12 @@ const PaymentForm = () => {
     return (
         <div className=" bg-[#F6F7F9] font-sans min-h-screen overflow-x-hidden">
             {/* Top Navigation Bar */}
-            <div className="bg-white rounded-2xl shadow-sm border border-[#E5E7EB] px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 mb-6 sm:mb-8">
-                <div className="flex items-center gap-3 sm:gap-4 min-w-0">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-md overflow-hidden bg-[#F5F5F5] shrink-0">
-                        <img src="/assets/User profile picture.png" alt="Zaid" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="min-w-0">
-                        <p className="text-[15px] sm:text-[17px] font-bold text-[#1A202C] truncate">Zaid Jawad</p>
-                        <p className="text-[12px] sm:text-[13px] text-[#888888]">Car Booking</p>
-                    </div>
-                </div>
-
-                <div className="flex items-center gap-2 sm:gap-4 min-w-0">
-                    <div className="w-14 h-14 sm:w-20 sm:h-20 flex items-center justify-center shrink-0">
-                        <img src={NissanGTRImg} alt="Nissan GT-R" className="w-full h-full object-contain" />
-                    </div>
-                    <div className="min-w-0">
-                        <p className="text-[15px] sm:text-[17px] font-bold text-[#1A202C]">Nissan GT - R</p>
-                        <p className="text-[12px] sm:text-[13px] text-[#888888]">Sport Car</p>
-                    </div>
-                </div>
-
-                <span className="text-[15px] sm:text-[17px] font-bold text-[#1A202C] whitespace-nowrap">Add Schedule</span>
-
-                <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-end flex-shrink-0">
-                    <button onClick={() => navigate("/add-schedule")} className="cursor-pointer px-6 sm:px-10 py-2 rounded-lg bg-[#E0E7FF] text-black font-medium text-[14px] sm:text-base">Previous</button>
-                    <button type="button" onClick={() => navigate("/additional-payment-form")} className="cursor-pointer px-8 sm:px-14 py-2 rounded-lg bg-[#3563E9] text-white font-medium text-[14px] sm:text-base">Next</button>
-                </div>
-            </div>
+            <BookingHeaderCard
+                carName="Nissan GT - R"
+                onPrevious={() => navigate("/add-schedule")}
+                onNext={() => navigate("/additional-payment-form")}
+                className="mb-6 sm:mb-8 rounded-2xl shadow-sm border border-[#E5E7EB]"
+            />
 
             {/* Main Content - Grid-based layout */}
             <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-sm border border-[#E5E7EB] max-w-7xl mx-auto">
