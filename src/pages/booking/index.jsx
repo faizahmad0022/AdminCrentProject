@@ -56,7 +56,7 @@ const bookingsData = [
 
 const Booking = () => {
     return (
-        <div className="booking-page space-y-8">
+        <div className="font-sans booking-page space-y-8">
             <div className="flex justify-between items-center">
                 <h1 className="text-[28px] font-extrabold text-[#1A202C]">My Bookings</h1>
                 <button className="cursor-pointer bg-[#3563E9] hover:bg-[#2d56d4] text-white px-5 py-2.5 rounded-[10px] text-[14px] font-bold shadow-[0px_8px_16px_rgba(53,99,233,0.3)] transition-all">

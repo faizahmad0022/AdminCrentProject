@@ -27,7 +27,7 @@ const Calendar = () => {
   };
 
   return (
-    <div className="min-h-full bg-[#F6F7F9] -m-4 md:-m-8 p-4 md:p-8">
+    <div className="font-sans min-h-full bg-[#F6F7F9] -m-4 md:-m-8 p-4 md:p-8">
       <div className="bg-white rounded-t-xl rounded-b-xl shadow-sm overflow-hidden border border-[#E5E7EB]/60">
         <div className="flex items-center gap-4 px-6 py-5 border-b border-[#E5E7EB] text-[#101828]">
           <h1 className="text-lg font-bold">Ride Book</h1>

@@ -15,7 +15,7 @@ const BookingCrentCar = () => {
     const navigate = useNavigate();
 
     return (
-        <div className=" bg-[#F8F8F8] overflow-x-hidden">
+        <div className="font-sans bg-[#F8F8F8] overflow-x-hidden">
 
             {/* Select Customer Bar */}
             <div className="bg-white rounded-2xl shadow-md px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 sm:gap-6 mb-4 sm:mb-6">
@@ -37,8 +37,8 @@ const BookingCrentCar = () => {
                 </div>
 
                 <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-                    <button className="cursor-pointer px-6 sm:px-10 py-2 rounded-lg bg-[#E0E7FF] text-[#1F2937] font-medium text-[14px] sm:text-base">Previous</button>
-                    <button onClick={() => navigate("/select-vehicle")} type="button" className="cursor-pointer px-8 sm:px-14 py-2 rounded-lg bg-[#3563E9] text-white font-medium text-[14px] sm:text-base">Next</button>
+                    <button className="cursor-pointer min-w-[140px] py-3 rounded-xl bg-[#DBEAFE] text-[#1E293B] font-bold text-base">Previous</button>
+                    <button onClick={() => navigate("/select-vehicle")} type="button" className="cursor-pointer min-w-[140px] py-3 rounded-xl bg-[#3563E9] text-white font-bold text-base shadow-md">Next</button>
                 </div>
             </div>
 

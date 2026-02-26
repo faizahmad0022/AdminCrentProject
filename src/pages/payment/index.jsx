@@ -41,7 +41,7 @@ const Payment = () => {
   }, []);
 
   return (
-    <div className="payment-content space-y-6">
+    <div className="font-sans payment-content space-y-6">
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {paymentCards.map((card) => {
           const isUp = card.trend === 'up';

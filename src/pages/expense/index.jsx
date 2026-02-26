@@ -8,7 +8,8 @@ import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianG
 import { PieChart, Pie, Cell, ResponsiveContainer as PieResponsiveContainer } from "recharts";
 
 const iconBlue = "#3563E9";
-const fontFamily = '"Plus Jakarta Sans", Inter, ui-sans-serif, system-ui, sans-serif';
+/* Recharts SVG text uses this; rest of app uses global font-sans from body */
+const chartFontFamily = '"Plus Jakarta Sans", Inter, ui-sans-serif, system-ui, sans-serif';
 
 const cashFlowData = [
   { name: "Jan", value: 42000 },
@@ -39,8 +40,8 @@ const CashFlowTooltip = ({ active, payload }) => {
   if (!active || !payload?.length) return null;
   return (
     <div
-      className="relative text-white font-bold text-sm px-4 py-3 rounded-lg shadow-lg"
-      style={{ fontFamily, backgroundColor: "#4A5568" }}
+      className="relative text-white font-bold text-sm px-4 py-3 rounded-lg shadow-lg font-sans"
+      style={{ backgroundColor: "#4A5568" }}
     >
       <span>
         ${Number(payload[0].value).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
@@ -57,7 +58,7 @@ const BalanceIcon = ({ useImg, onError }) =>
   useImg ? (
     <img src="/assets/Total-revenue-icon.png" alt="Balance" className="w-6 h-6 object-contain" onError={onError} />
   ) : (
-    <span className="text-white font-bold text-2xl leading-none" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>$</span>
+    <span className="text-white font-bold text-2xl leading-none font-sans">$</span>
   );
 
 const ArrowDownIcon = ({ useImg, onError }) =>
@@ -83,11 +84,8 @@ const MetricCard = ({ label, value, percentage, icon: Icon }) => {
   const useImg = !imgFailed;
   return (
   <div
-    className="bg-white rounded-xl p-6 flex flex-col gap-5 h-full min-h-[140px]"
-    style={{
-      boxShadow: "0px 4px 20px rgba(0,0,0,0.06)",
-      fontFamily: '"Plus Jakarta Sans", Inter, ui-sans-serif, system-ui, sans-serif',
-    }}
+    className="bg-white rounded-xl p-6 flex flex-col gap-5 h-full min-h-[140px] font-sans"
+    style={{ boxShadow: "0px 4px 20px rgba(0,0,0,0.06)" }}
   >
     {/* Top row: icon + value (same as in image) */}
     <div className="flex items-start gap-4">
@@ -131,13 +129,7 @@ const Expense = () => {
   ];
 
   return (
-    <div
-      className="expense-page space-y-6"
-      style={{
-        fontFamily,
-        background: "#F8F8F8",
-      }}
-    >
+    <div className="expense-page space-y-6 font-sans bg-[#F8F8F8]">
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {cards.map((card) => (
           <MetricCard
@@ -154,23 +146,18 @@ const Expense = () => {
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Card 1: Cash Flow */}
         <div
-          className="bg-white rounded-xl p-6 flex flex-col h-full min-h-[320px]"
-          style={{
-            boxShadow: "0px 4px 20px rgba(0,0,0,0.06)",
-            fontFamily,
-          }}
+          className="bg-white rounded-xl p-6 flex flex-col h-full min-h-[320px] font-sans"
+          style={{ boxShadow: "0px 4px 20px rgba(0,0,0,0.06)" }}
         >
           <div className="flex justify-between items-center mb-6">
-            <h3 className="text-base font-bold text-[#1A202C]" style={{ fontFamily }}>
-              Cash Flow
-            </h3>
+            <h3 className="text-base font-bold text-[#1A202C]">Cash Flow</h3>
             <button
               type="button"
               className="flex items-center gap-2 px-3 py-2 rounded-lg border text-sm font-medium cursor-pointer hover:bg-gray-50 transition-colors"
               style={{ borderColor: "#E2E8F0", color: "#64748B" }}
             >
               <ChevronDown className="w-4 h-4 flex-shrink-0" strokeWidth={2} />
-              <span style={{ fontFamily }}>Jan 2025 - Jun 2025</span>
+              <span>Jan 2025 - Jun 2025</span>
               <ChevronDown className="w-4 h-4 flex-shrink-0" strokeWidth={2} />
             </button>
           </div>
@@ -188,13 +175,13 @@ const Expense = () => {
                   dataKey="name"
                   axisLine={false}
                   tickLine={false}
-                  tick={{ fill: "#64748B", fontSize: 12, fontFamily }}
+                  tick={{ fill: "#64748B", fontSize: 12, fontFamily: chartFontFamily }}
                   dy={10}
                 />
                 <YAxis
                   axisLine={false}
                   tickLine={false}
-                  tick={{ fill: "#64748B", fontSize: 12, fontFamily }}
+                  tick={{ fill: "#64748B", fontSize: 12, fontFamily: chartFontFamily }}
                   tickFormatter={(v) => (v === 0 ? "$0" : `$${v / 1000}k`)}
                   ticks={[0, 50000, 100000, 150000, 200000]}
                   domain={[0, 200000]}
@@ -221,14 +208,11 @@ const Expense = () => {
 
         {/* Card 2: Expense Balance */}
         <div
-          className="bg-white rounded-xl p-6 flex flex-col h-full min-h-[320px]"
-          style={{
-            boxShadow: "0px 4px 20px rgba(0,0,0,0.06)",
-            fontFamily,
-          }}
+          className="bg-white rounded-xl p-6 flex flex-col h-full min-h-[320px] font-sans"
+          style={{ boxShadow: "0px 4px 20px rgba(0,0,0,0.06)" }}
         >
           <div className="flex justify-between items-center mb-6">
-            <h3 className="text-base font-bold text-[#1A202C]" style={{ fontFamily }}>
+            <h3 className="text-base font-bold text-[#1A202C]">
               Expense Balance
             </h3>
             <button
@@ -260,10 +244,10 @@ const Expense = () => {
                 </PieChart>
               </PieResponsiveContainer>
               <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                <span className="text-2xl font-bold text-black" style={{ fontFamily }}>
+                <span className="text-2xl font-bold text-black">
                   72,030
                 </span>
-                <span className="text-sm font-normal mt-1 text-[#64748B]" style={{ fontFamily }}>
+                <span className="text-sm font-normal mt-1 text-[#64748B]">
                   Expense
                 </span>
               </div>
@@ -276,11 +260,11 @@ const Expense = () => {
                       className="w-3 h-3 rounded-full flex-shrink-0"
                       style={{ backgroundColor: item.color }}
                     />
-                    <span className="text-sm font-normal text-[#596780] truncate" style={{ fontFamily }}>
+                    <span className="text-sm font-normal text-[#596780] truncate">
                       {item.name}
                     </span>
                   </div>
-                  <span className="text-sm font-bold text-black flex-shrink-0" style={{ fontFamily }}>
+                  <span className="text-sm font-bold text-black flex-shrink-0">
                     {item.value.toLocaleString()}
                   </span>
                 </div>
@@ -292,15 +276,12 @@ const Expense = () => {
 
       {/* Expense table card */}
       <div
-        className="bg-white rounded-md overflow-hidden"
-        style={{
-          boxShadow: "0px 4px 20px rgba(0,0,0,0.06)",
-          fontFamily,
-        }}
+        className="bg-white rounded-md overflow-hidden font-sans"
+        style={{ boxShadow: "0px 4px 20px rgba(0,0,0,0.06)" }}
       >
         <div className="p-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
-            <h2 className="text-lg font-bold text-gray-900" style={{ fontFamily }}>
+            <h2 className="text-lg font-bold text-gray-900">
               Expense
             </h2>
             <div className="flex flex-wrap items-center gap-3">
@@ -313,13 +294,11 @@ const Expense = () => {
                   type="text"
                   placeholder="Search"
                   className="w-full pl-10 pr-4 py-2.5 text-sm border border-gray-200 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-[#3563E9]/30 focus:border-[#3563E9]"
-                  style={{ fontFamily }}
                 />
               </div>
               <div className="relative flex-shrink-0">
                 <select
                   className="appearance-none pl-4 pr-10 py-2.5 text-sm border border-gray-200 rounded-md text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-[#3563E9]/30 focus:border-[#3563E9] min-w-[120px] bg-white"
-                  style={{ fontFamily }}
                 >
                   <option value="">Sort By</option>
                 </select>
@@ -339,7 +318,6 @@ const Expense = () => {
                     <th
                       key={th}
                       className="text-left py-4 px-6 text-sm font-bold text-black whitespace-nowrap"
-                      style={{ fontFamily }}
                     >
                       {th}
                     </th>
@@ -349,17 +327,16 @@ const Expense = () => {
               <tbody>
                 {expenseTableData.map((row, idx) => (
                   <tr key={idx} className="border-t border-gray-100">
-                    <td className="py-4 px-6 text-sm font-normal text-black" style={{ fontFamily }}>{row.expense}</td>
-                    <td className="py-4 px-6 text-sm font-normal text-black" style={{ fontFamily }}>{row.category}</td>
-                    <td className="py-4 px-6 text-sm font-normal text-black" style={{ fontFamily }}>{row.quantity}</td>
-                    <td className="py-4 px-6 text-sm font-normal text-black" style={{ fontFamily }}>{row.amount}</td>
-                    <td className="py-4 px-6 text-sm font-normal text-black" style={{ fontFamily }}>{row.date}</td>
+                    <td className="py-4 px-6 text-sm font-normal text-black">{row.expense}</td>
+                    <td className="py-4 px-6 text-sm font-normal text-black">{row.category}</td>
+                    <td className="py-4 px-6 text-sm font-normal text-black">{row.quantity}</td>
+                    <td className="py-4 px-6 text-sm font-normal text-black">{row.amount}</td>
+                    <td className="py-4 px-6 text-sm font-normal text-black">{row.date}</td>
                     <td className="py-4 px-6">
                       <span
                         className={`inline-flex px-3 py-1 rounded-full text-xs font-semibold border-2 ${
                           row.status === "Completed" ? "bg-green-100 text-green-800 border-green-200" : "bg-red-100 text-red-800 border-red-200"
                         }`}
-                        style={{ fontFamily }}
                       >
                         {row.status}
                       </span>
@@ -389,7 +366,7 @@ const Expense = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-4 mt-4 border-t border-gray-100">
-            <p className="text-sm text-gray-400" style={{ fontFamily }}>
+            <p className="text-sm text-gray-400">
               Showing <span className="text-black">5</span> from <span className="text-black">100</span> data
             </p>
             <div className="flex items-center gap-2">
@@ -403,21 +380,19 @@ const Expense = () => {
               <button
                 type="button"
                 className="cursor-pointer w-9 h-9 rounded-md border border-gray-200 flex items-center justify-center text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors"
-                style={{ fontFamily }}
               >
                 1
               </button>
               <button
                 type="button"
                 className="cursor-pointer w-9 h-9 rounded-md flex items-center justify-center text-sm font-medium text-white transition-colors"
-                style={{ fontFamily, backgroundColor: iconBlue }}
+                style={{ backgroundColor: iconBlue }}
               >
                 2
               </button>
               <button
                 type="button"
                 className="cursor-pointer w-9 h-9 rounded-md border border-gray-200 flex items-center justify-center text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors"
-                style={{ fontFamily }}
               >
                 3
               </button>

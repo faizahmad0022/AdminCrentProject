@@ -95,7 +95,7 @@ const Reminder = () => {
     };
 
     return (
-        <div className="flex flex-col lg:flex-row gap-8 items-start w-full">
+        <div className="font-sans flex flex-col lg:flex-row gap-8 items-start w-full">
             <div className="flex-1 w-full" style={{ backgroundColor: 'white', borderRadius: '10px', border: '1px solid #F1F3F9', display: 'block', opacity: 1, visibility: 'visible' }}>
                 <div className="p-6 border-b border-gray-100 flex items-center gap-4">
                     <img src={reminderHeaderIcon} alt="Reminder" className="w-10 h-10" />

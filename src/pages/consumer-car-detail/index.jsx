@@ -9,7 +9,7 @@ const BLUE_PRIMARY = "#3563E9";
 
 const ConsumerCarDetail = () => {
   return (
-    <div className="bg-[#F8F8F8]">
+    <div className="font-sans bg-[#F8F8F8]">
       {/* 1. Navigation / Stepper Bar */}
       <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-md px-4 sm:px-10 py-5 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 sm:gap-6 mb-6">
         <h2 className="font-bold text-[#111827] text-lg sm:text-xl whitespace-nowrap">
@@ -39,13 +39,10 @@ const ConsumerCarDetail = () => {
         </div>
 
         <div className="flex items-center gap-3 flex-shrink-0">
-          <button className="px-8 sm:px-12 py-3 rounded-xl bg-[#DBEAFE] text-[#1E40AF] font-bold text-sm sm:text-base transition hover:bg-blue-200">
+          <button className="min-w-[140px] py-3 rounded-xl bg-[#DBEAFE] text-[#1E293B] font-bold text-base transition hover:bg-blue-200">
             Previous
           </button>
-          <button
-            className="px-10 sm:px-16 py-3 rounded-xl text-white font-bold text-sm sm:text-base shadow-lg hover:opacity-90 transition"
-            style={{ backgroundColor: BLUE_PRIMARY }}
-          >
+          <button className="min-w-[140px] py-3 rounded-xl bg-[#3563E9] text-white font-bold text-base shadow-md transition hover:opacity-90">
             Next
           </button>
         </div>

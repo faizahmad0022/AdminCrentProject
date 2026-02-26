@@ -65,7 +65,7 @@ const CustomerProfileDocument = () => {
   const [activeTab, setActiveTab] = useState(TAB_KEYS.TRIP_DETAILS);
 
   return (
-    <div className="customer-profile-document space-y-6">
+    <div className="font-sans customer-profile-document space-y-6">
       <h1 className="text-2xl md:text-3xl font-extrabold text-[#1A202C] tracking-tight">Client Profile</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
