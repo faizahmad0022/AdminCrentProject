@@ -15,7 +15,7 @@ const conditions = [
 
 const Inspection = () => {
   return (
-    <div className="font-sans bg-[#F8F8F8]">
+    <div className="bg-[#F8F8F8]">
       <BookingHeaderCard />
 
       {/* IMAGE SECTION */}

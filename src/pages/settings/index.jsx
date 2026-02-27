@@ -138,7 +138,7 @@ const Settings = () => {
 
   return (
     <div
-      className="font-sans relative min-h-[calc(100vh-72px)] md:min-h-[calc(100vh-80px)] -m-4 md:-m-8 p-4 md:p-8 bg-cover bg-center bg-no-repeat"
+      className="relative min-h-[calc(100vh-72px)] md:min-h-[calc(100vh-80px)] -m-4 md:-m-8 p-4 md:p-8 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${carBackground})` }}
     >
       {/* Light blue tint so the car image shows and the card stays readable */}

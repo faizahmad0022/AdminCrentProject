@@ -60,7 +60,7 @@ const BookingDetails = () => {
     const booking = bookingsData[id] || bookingsData[1];
 
     return (
-        <div className="font-sans booking-details-page space-y-8">
+        <div className="booking-details-page space-y-8">
             <div className="bg-white p-5 rounded-[18px] shadow-[0px_10px_30px_rgba(17,38,146,0.05)] border border-white/60">
                 <div className="flex flex-col lg:flex-row items-center gap-6">
                     <div className="flex items-center gap-8 flex-1 w-full overflow-x-auto pb-2 lg:pb-0 scrollbar-hide">

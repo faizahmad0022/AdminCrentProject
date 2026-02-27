@@ -117,7 +117,7 @@ const EachCarUnit = () => {
     const [currentPage, setCurrentPage] = useState(2);
 
     return (
-        <div className="font-sans each-car-unit-page space-y-6">
+        <div className="each-car-unit-page space-y-6">
             <section className="flex flex-col lg:flex-row gap-6">
                 <div className="relative bg-[#3563E9] p-6 flex items-center justify-center lg:w-[320px] min-h-[200px] overflow-hidden rounded-[10px] flex-shrink-0" style={car.background ? { backgroundImage: `url(${car.background})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}}>
                     {!car.background && (

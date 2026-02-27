@@ -16,7 +16,7 @@
 }
 
 body {
-    @apply font-sans antialiased text-gray-900 bg-[#F6F7F9];
+    @apply antialiased text-gray-900 bg-[#F6F7F9];
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 

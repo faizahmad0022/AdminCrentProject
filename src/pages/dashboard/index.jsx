@@ -8,7 +8,7 @@ import BookingTable from '../../components/BookingTable';
 
 const Dashboard = () => {
     return (
-        <div className="font-sans dashboard-content space-y-8">
+        <div className="dashboard-content space-y-8">
             <section className="stats-row grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <StatsCard
                     title="Total Revenue"

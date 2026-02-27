@@ -12,7 +12,7 @@ const Inbox = () => {
   const [message, setMessage] = useState('');
 
   return (
-    <div className="font-sans -m-4 md:-m-8 w-[calc(100%+2rem)] md:w-[calc(100%+4rem)] min-h-[calc(100vh-5rem)] flex bg-[#F6F7F9]">
+    <div className="-m-4 md:-m-8 w-[calc(100%+2rem)] md:w-[calc(100%+4rem)] min-h-[calc(100vh-5rem)] flex bg-[#F6F7F9]">
       <aside className="w-[88px] md:w-24 flex-shrink-0 bg-white border-r border-gray-100 flex flex-col items-center py-6 gap-6">
         <button type="button" className="cursor-pointer w-12 h-12 md:w-14 md:h-14 rounded-full text-[#90A3BF] flex items-center justify-center hover:text-[#3563E9] hover:bg-[#3563E9]/5 transition-colors" aria-label="New conversation">
           <Plus className="w-6 h-6 md:w-7 md:h-7" strokeWidth={2} />

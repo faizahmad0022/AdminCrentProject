@@ -199,7 +199,7 @@ const CarUnit = () => {
     ];
 
     return (
-        <div className="font-sans car-unit-page space-y-8">
+        <div className="car-unit-page space-y-8">
             <h1 className="text-[24px] md:text-[28px] font-extrabold text-[#1A202C]">Car Units</h1>
 
             <div className="bg-white p-4 md:p-5 rounded-[18px] shadow-[0px_10px_30px_rgba(17,38,146,0.05)] overflow-x-auto whitespace-nowrap md:whitespace-normal border border-white/60">

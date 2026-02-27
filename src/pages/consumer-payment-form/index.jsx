@@ -41,10 +41,13 @@ const ConsumerPaymentForm = () => {
         </div>
 
         <div className="flex items-center gap-3 flex-shrink-0">
-          <button className="min-w-[140px] py-3 rounded-xl bg-[#DBEAFE] text-[#1E293B] font-bold text-base">
+          <button className="px-8 sm:px-12 py-2.5 rounded-lg bg-[#E0E7FF] text-[#1F2937] font-bold text-sm sm:text-base">
             Previous
           </button>
-          <button className="min-w-[140px] py-3 rounded-xl bg-[#3563E9] text-white font-bold text-base shadow-md">
+          <button
+            className="px-10 sm:px-16 py-2.5 rounded-lg text-white font-bold text-sm sm:text-base shadow-md"
+            style={{ backgroundColor: BLUE_PRIMARY }}
+          >
             Next
           </button>
         </div>

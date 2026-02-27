@@ -8,7 +8,7 @@ const clientData = [
 
 const ClientList = () => {
   return (
-    <div className="font-sans client-list-content space-y-6">
+    <div className="client-list-content space-y-6">
       <h1 className="text-2xl md:text-3xl font-extrabold text-[#1A202C] tracking-tight">Client List</h1>
 
       <div className="bg-white rounded-[20px] shadow-[0px_10px_30px_rgba(17,38,146,0.05)] overflow-hidden border border-white/50">

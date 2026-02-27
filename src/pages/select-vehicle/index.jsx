@@ -65,13 +65,13 @@ const SelectVehicle = () => {
                 <div className="flex items-center gap-2 sm:gap-3 w-full lg:w-auto justify-end flex-shrink-0">
                     <button 
                         onClick={() => navigate("/booking-crent-car"        )} 
-                        className="cursor-pointer flex-1 sm:flex-none min-w-[140px] py-3 rounded-xl bg-[#DBEAFE] text-[#1E293B] font-bold text-base hover:bg-blue-100 transition-colors"
+                        className="cursor-pointer flex-1 sm:flex-none min-w-0 px-4 sm:px-6 lg:px-10 py-2 sm:py-2.5 rounded-lg bg-[#E0E7FF] text-[#1F2937] font-semibold text-[13px] sm:text-[14px] hover:bg-blue-100 transition-colors"
                     >
                         Previous
                     </button>
                     <button 
                         onClick={() => navigate("/add-schedule")} 
-                        className="cursor-pointer flex-1 sm:flex-none min-w-[140px] py-3 rounded-xl bg-[#3563E9] text-white font-bold text-base hover:bg-blue-700 shadow-md transition-colors"
+                        className="cursor-pointer flex-1 sm:flex-none min-w-0 px-5 sm:px-8 lg:px-14 py-2 sm:py-2.5 rounded-lg bg-[#3563E9] text-white font-semibold text-[13px] sm:text-[14px] hover:bg-blue-700 shadow-md transition-colors"
                     >
                         Next
                     </button>
