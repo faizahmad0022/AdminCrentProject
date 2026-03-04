@@ -75,7 +75,7 @@ const CarAlertResponse = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             
             {/* Map Placeholder Section */}
-            <div className="relative bg-[#f8f9fb] rounded-2xl overflow-hidden min-h-[350px] border border-slate-100">
+            <div className="relative bg-[#f8f9fb] rounded-2xl overflow-hidden min-h-87.5 border border-slate-100">
                <svg viewBox="0 0 400 300" className="w-full h-full opacity-60">
                   <rect width="400" height="300" fill="#f0f2f5" />
                   <path d="M0 50 L400 50 M0 150 L400 150 M0 250 L400 250 M100 0 L100 300 M250 0 L250 300" stroke="#fff" strokeWidth="8" />
@@ -101,7 +101,7 @@ const CarAlertResponse = () => {
                    <img 
                     src={smalllookcar} 
                     alt="Nissan GT-R" 
-                    className="w-[120px] h-auto object-contain z-10 drop-shadow-2xl" 
+                    className="w-30 h-auto object-contain z-10 drop-shadow-2xl" 
                    />
                 </div>
                 <div>
@@ -143,7 +143,7 @@ const CarAlertResponse = () => {
               </div>
 
               {/* Pricing Divider */}
-              <div className="h-[1px] bg-slate-100 w-full mt-10 mb-8"></div>
+              <div className="h-px bg-slate-100 w-full mt-10 mb-8"></div>
 
               {/* Total Price Section */}
               <div className="flex items-end justify-between">

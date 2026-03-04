@@ -20,7 +20,7 @@ const TopCarsChart = () => {
             </div>
 
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-                <div className="relative w-48 h-48 flex-shrink-0">
+                <div className="relative w-48 h-48 shrink-0">
                     <ResponsiveContainer width="100%" height="100%">
                         <PieChart>
                             <Pie
@@ -48,7 +48,7 @@ const TopCarsChart = () => {
                         <div key={item.name} className="flex justify-between items-center w-full group cursor-pointer">
                             <div className="flex items-center gap-3">
                                 <div
-                                    className="w-3 h-3 rounded-full flex-shrink-0"
+                                    className="w-3 h-3 rounded-full shrink-0"
                                     style={{ backgroundColor: item.color }}
                                 />
                                 <span className="text-[14px] text-[#596780] font-bold">{item.name}</span>

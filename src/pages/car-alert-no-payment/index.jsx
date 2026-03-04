@@ -98,7 +98,7 @@ const CarBookingAlert = () => {
                    <img 
                     src={smalllookcar} 
                     alt="Nissan GT-R" 
-                    className="w-[110px] h-auto object-contain z-10 relative drop-shadow-2xl" 
+                    className="w-27.5 h-auto object-contain z-10 relative drop-shadow-2xl" 
                    />
                 </div>
                 <div>
@@ -114,7 +114,7 @@ const CarBookingAlert = () => {
               <div className="space-y-8">
                 <div>
                   <div className="flex items-center gap-2.5 mb-4">
-                    <div className="w-[18px] h-[18px] rounded-full border-[5px] border-blue-100 bg-[#3563E9]"></div>
+                    <div className="w-4.5 h-4.5 rounded-full border-[5px] border-blue-100 bg-[#3563E9]"></div>
                     <span className="font-bold text-[16px] text-slate-900">Pick – Up</span>
                   </div>
                   <div className="grid grid-cols-3 gap-4 border-b border-slate-50 pb-6">
@@ -126,7 +126,7 @@ const CarBookingAlert = () => {
 
                 <div>
                   <div className="flex items-center gap-2.5 mb-4">
-                    <div className="w-[18px] h-[18px] rounded-full border-[5px] border-sky-50 bg-[#54A6FF]"></div>
+                    <div className="w-4.5 h-4.5 rounded-full border-[5px] border-sky-50 bg-[#54A6FF]"></div>
                     <span className="font-bold text-[16px] text-slate-900">Drop – Off</span>
                   </div>
                   <div className="grid grid-cols-3 gap-4">
@@ -139,7 +139,7 @@ const CarBookingAlert = () => {
 
               {/* Pricing Section */}
               <div className="mt-12 flex items-end justify-between border-t border-slate-50 pt-8">
-                <div className="max-w-[180px]">
+                <div className="max-w-45">
                   <p className="text-xl font-bold text-slate-900 leading-tight">Total Rental Price</p>
                   <p className="text-[12px] text-slate-400 font-medium leading-tight mt-1">Overall price and includes rental discount</p>
                 </div>

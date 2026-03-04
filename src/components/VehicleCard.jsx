@@ -8,11 +8,11 @@ const VehicleCard = ({ car }) => {
       {/* LEFT SIDE */}
       <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-4 sm:gap-6 min-w-0 flex-1">
         {/* Car Image */}
-        <div className="w-full sm:w-[120px] md:w-[140px] flex-shrink-0 flex justify-center sm:justify-start">
+        <div className="w-full sm:w-30 md:w-35 shrink-0 flex justify-center sm:justify-start">
           <img
             src={car.image}
             alt={car.name}
-            className="max-w-[140px] sm:w-full h-auto object-contain"
+            className="max-w-35 sm:w-full h-auto object-contain"
           />
         </div>
 
@@ -28,11 +28,11 @@ const VehicleCard = ({ car }) => {
             </h3>
 
             <div className="flex items-center gap-1">
-              <Star size={12} className="sm:w-[14px] sm:h-[14px]" fill="#FBBF24" stroke="none" />
-              <Star size={12} className="sm:w-[14px] sm:h-[14px]" fill="#FBBF24" stroke="none" />
-              <Star size={12} className="sm:w-[14px] sm:h-[14px]" fill="#FBBF24" stroke="none" />
-              <Star size={12} className="sm:w-[14px] sm:h-[14px]" fill="#FBBF24" stroke="none" />
-              <Star size={12} className="sm:w-[14px] sm:h-[14px]" stroke="#D1D5DB" />
+              <Star size={12} className="sm:w-3.5 sm:h-3.5" fill="#FBBF24" stroke="none" />
+              <Star size={12} className="sm:w-3.5 sm:h-3.5" fill="#FBBF24" stroke="none" />
+              <Star size={12} className="sm:w-3.5 sm:h-3.5" fill="#FBBF24" stroke="none" />
+              <Star size={12} className="sm:w-3.5 sm:h-3.5" fill="#FBBF24" stroke="none" />
+              <Star size={12} className="sm:w-3.5 sm:h-3.5" stroke="#D1D5DB" />
               <span className="text-[12px] sm:text-[13px] text-[#6B7280] ml-1">
                 {car.rating}
               </span>
