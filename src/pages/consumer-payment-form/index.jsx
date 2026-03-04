@@ -41,7 +41,7 @@ const ConsumerPaymentForm = () => {
         </div>
 
         <div className="flex items-center gap-3 flex-shrink-0">
-          <button className="px-8 sm:px-12 py-2.5 rounded-lg bg-[#E0E7FF] text-[#1F2937] font-bold text-sm sm:text-base">
+          <button className="px-8 sm:px-12 py-2.5 rounded-lg bg-[#E0E7FF] text-[#1A202C] font-bold text-sm sm:text-base">
             Previous
           </button>
           <button

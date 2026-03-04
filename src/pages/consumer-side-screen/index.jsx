@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Link } from "react-router-dom";
 import { Edit, Fuel, Settings } from "lucide-react";
 import CarVerticaleBackground from "../../assets/Car-verticale-background.png";
 import SmallLookCar from "../../assets/smalllookcar.png"
@@ -38,15 +39,19 @@ const ConsumerCarDetail = () => {
         </div>
 
         <div className="flex items-center gap-3 flex-shrink-0">
-          <button className="px-8 sm:px-12 py-3 rounded-xl bg-[#DBEAFE] text-[#1E40AF] font-bold text-sm sm:text-base transition hover:bg-blue-200">
+          <Link
+            to="/consumer-registration-information-form"
+            className="px-8 sm:px-12 py-3 rounded-xl bg-[#DBEAFE] text-[#1A202C] font-bold text-sm sm:text-base transition hover:bg-blue-200 no-underline inline-block text-center"
+          >
             Previous
-          </button>
-          <button
-            className="px-10 sm:px-16 py-3 rounded-xl text-white font-bold text-sm sm:text-base shadow-lg hover:opacity-90 transition"
+          </Link>
+          <Link
+            to="/select-vehicle"
+            className="px-10 sm:px-16 py-3 rounded-xl text-white font-bold text-sm sm:text-base shadow-lg hover:opacity-90 transition no-underline inline-block text-center"
             style={{ backgroundColor: BLUE_PRIMARY }}
           >
             Next
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -64,7 +69,7 @@ const ConsumerCarDetail = () => {
           <div className="bg-white rounded-3xl p-6 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-xl">
             <div className="flex flex-col sm:flex-row items-center gap-8">
               {/* Car Image with Styled Blue Background */}
-              <div className="w-56 h-32 rounded-2xl overflow-hidden bg-[#3563E9] flex items-center justify-center p-4 relative shadow-inner">
+              <div className="w-56 h-32 flex items-center justify-center">
                 <img src={SmallLookCar} alt="Car" className="w-full h-full object-contain z-10 drop-shadow-lg" />
                 {/* Visual "diagonal lines" pattern effect */}
                 <div className="absolute inset-0 opacity-10 bg-gradient-to-br from-white via-transparent to-black" />

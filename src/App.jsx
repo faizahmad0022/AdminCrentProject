@@ -17,22 +17,23 @@ import SelectVehicle from './pages/select-vehicle';
 import BookingDetails from './pages/booking-details';
 import AwaitingPayment from './pages/awaiting-payment';
 import BookingCrentCar from './pages/booking-crent-car';
+import CarBookingAlert from './pages/car-alert-no-payment';
+import ActionCustomerCar from './pages/action-customer-car';
 import DocumentCarDetail from './pages/document-car-detail'; 
+import CarRefactorDemage from './pages/car-refactor-demage';
 import ConsumerCarDetail from './pages/consumer-car-detail';
+import CallScreenProfile from './pages/call-screen-profile';
+import CarAlertResponse from './pages/car-alert-no-answering';
 import BookingConfirmation from './pages/booking-confirmation';
 import ConsumerPaymentForm from './pages/consumer-payment-form';
+import InspectionPdfScreen from './pages/inspaction-pdf-screen';
 import ConsumerRegistrationCar from './pages/consumer-side-screen';
 import AdditionalPaymentForm from './pages/additional-payment-form';
+import BookingReturnCondition from './pages/booking-return-condition';
 import CustomerProfileDocument from './pages/customer-profile-document';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import InspectionPdfScreen from './pages/inspaction-pdf-screen';
-import CarBookingAlert from './pages/car-alert-no-payment';
-import CarAlertResponse from './pages/car-alert-no-answering';
-import CarRefactorDemage from './pages/car-refactor-demage';
 import AdditionalCustomerCharges from './pages/consumer-car-detail/additional-customer-charges';
-import BookingReturnCondition from './pages/booking-return-condition';
-import ActionCustomerCar from './pages/action-customer-car';
-import CallScreenProfile from './pages/call-screen-profile';
+import ConsumerRegistrationInformationForm from './pages/consumer-registration-information-form';
 
 
 function App() {
@@ -73,6 +74,7 @@ function App() {
           <Route path="booking-return-condition" element={<BookingReturnCondition />} />
           <Route path="action-customer-car" element={<ActionCustomerCar />} />
           <Route path="call-screen-profile" element={<CallScreenProfile />} />
+          <Route path="consumer-registration-information-form" element={<ConsumerRegistrationInformationForm />} />
         </Route>
       </Routes>
     </Router>

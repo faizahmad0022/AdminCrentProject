@@ -1,14 +1,17 @@
 "use client";
 
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import cruzerblack from "../../assets/cruzerblack.png";
 import BookingHeaderCard from "../../components/BookingHeaderCard";
 import CarVerticaleBackground from "../../assets/Car-verticale-background.png";
 
 const InspectionPdfScreen = () => {
+    const navigate = useNavigate();
+
     return (
         <div className="bg-[#F8FAFC] min-h-screen font-sans text-[#1E293B] pb-10">
-            <BookingHeaderCard />
+            <BookingHeaderCard onPrevious={() => navigate("/additional-payment-form")} />
             <div className="relative rounded-2xl md:rounded-[2.5rem] overflow-hidden max-w-6xl mt-4 md:mt-8 mx-3 md:mx-auto shadow-2xl">
                 <img
                     src={CarVerticaleBackground}

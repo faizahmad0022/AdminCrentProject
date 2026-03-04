@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { ChevronDown, Search } from 'lucide-react';
 import BookingCard from '../../components/BookingCard';
 import NissanGTRImg from '../../assets/Nissan-GT-R.png';
@@ -55,11 +56,17 @@ const bookingsData = [
 ];
 
 const Booking = () => {
+    const navigate = useNavigate();
+
     return (
         <div className="booking-page space-y-8">
             <div className="flex justify-between items-center">
                 <h1 className="text-[28px] font-extrabold text-[#1A202C]">My Bookings</h1>
-                <button className="cursor-pointer bg-[#3563E9] hover:bg-[#2d56d4] text-white px-5 py-2.5 rounded-[10px] text-[14px] font-bold shadow-[0px_8px_16px_rgba(53,99,233,0.3)] transition-all">
+                <button
+                    type="button"
+                    onClick={() => navigate('/booking-crent-car')}
+                    className="cursor-pointer bg-[#3563E9] hover:bg-[#2d56d4] text-white px-5 py-2.5 rounded-[10px] text-[14px] font-bold shadow-[0px_8px_16px_rgba(53,99,233,0.3)] transition-all"
+                >
                     Add Booking
                 </button>
             </div>

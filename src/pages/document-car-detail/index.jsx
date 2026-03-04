@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Link } from "react-router-dom";
 import { Edit, Fuel, Settings, CloudUpload, FileText, Eye, X, Loader2 } from "lucide-react";
 import CarVerticaleBackground from "../../assets/Car-verticale-background.png";
 import SmallLookCar from "../../assets/smalllookcar.png";
@@ -39,15 +40,19 @@ const DocumentCarDetail = () => {
         </div>
 
         <div className="flex items-center gap-3 flex-shrink-0">
-          <button className="px-8 sm:px-12 py-2.5 rounded-lg bg-[#E0E7FF] text-[#1F2937] font-bold text-sm sm:text-base">
+          <Link
+            to="/consumer-car-detail"
+            className="px-8 sm:px-12 py-2.5 rounded-lg bg-[#E0E7FF] text-[#1A202C] font-bold text-sm sm:text-base no-underline inline-block text-center"
+          >
             Previous
-          </button>
-          <button
-            className="px-10 sm:px-16 py-2.5 rounded-lg text-white font-bold text-sm sm:text-base shadow-md"
+          </Link>
+          <Link
+            to="/consumer-payment-form"
+            className="px-10 sm:px-16 py-2.5 rounded-lg text-white font-bold text-sm sm:text-base shadow-md no-underline inline-block text-center"
             style={{ backgroundColor: BLUE_PRIMARY }}
           >
             Next
-          </button>
+          </Link>
         </div>
       </div>
 

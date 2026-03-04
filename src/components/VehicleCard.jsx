@@ -1,8 +1,10 @@
 "use client";
 
+import { useNavigate } from "react-router-dom";
 import { Star } from "lucide-react";
 
-const VehicleCard = ({ car }) => {
+const VehicleCard = ({ car, carId = 1 }) => {
+  const navigate = useNavigate();
   return (
     <div className="bg-white border border-[#E5E7EB] rounded-xl px-4 sm:px-6 py-3 sm:py-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 sm:gap-4 min-w-0">
       {/* LEFT SIDE */}
@@ -74,6 +76,7 @@ const VehicleCard = ({ car }) => {
 
         <button
           type="button"
+          onClick={() => navigate(`/car-unit/${carId}`)}
           className="cursor-pointer flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-1.5 sm:py-2 rounded-lg bg-[#426FFD] text-white text-[13px] sm:text-[14px] font-medium hover:bg-[#355EDB] transition shrink-0"
         >
           <img

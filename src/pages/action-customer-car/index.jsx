@@ -1,21 +1,32 @@
 "use client";
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AlertCircle } from 'lucide-react';
 
 const ActionCustomerCar = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="min-h-screen bg-[#F6F7F9] p-4 md:p-8 font-sans">
+    <div className="bg-[#F6F7F9] font-sans">
       <div className="max-w-5xl mx-auto">
         
         {/* Header Section */}
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-bold text-slate-900">Take an action</h1>
           <div className="flex gap-4">
-            <button className="px-10 py-2.5 bg-[#3563E9] text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-sm">
+            <button
+              type="button"
+              onClick={() => navigate('/additional-payment-form')}
+              className="px-10 py-2.5 bg-[#3563E9] text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-sm"
+            >
               Save
             </button>
-            <button className="px-10 py-2.5 bg-[#3563E9] text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-sm">
+            <button
+              type="button"
+              onClick={() => navigate('/additional-payment-form')}
+              className="px-10 py-2.5 bg-[#3563E9] text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-sm"
+            >
               Cancel
             </button>
           </div>

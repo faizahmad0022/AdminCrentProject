@@ -37,7 +37,7 @@ const BookingCrentCar = () => {
                 </div>
 
                 <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-                    <button className="cursor-pointer px-6 sm:px-10 py-2 rounded-lg bg-[#E0E7FF] text-[#1F2937] font-medium text-[14px] sm:text-base">Previous</button>
+                    <button className="cursor-pointer px-6 sm:px-10 py-2 rounded-lg bg-[#E0E7FF] text-[#1A202C] font-medium text-[14px] sm:text-base">Previous</button>
                     <button onClick={() => navigate("/select-vehicle")} type="button" className="cursor-pointer px-8 sm:px-14 py-2 rounded-lg bg-[#3563E9] text-white font-medium text-[14px] sm:text-base">Next</button>
                 </div>
             </div>

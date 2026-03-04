@@ -51,7 +51,11 @@ const BookingCard = ({ booking }) => {
                     <button className="cursor-pointer w-9 h-9 rounded-lg bg-[#3563E9] flex items-center justify-center hover:bg-[#2d56d4] transition-colors shadow-sm">
                         <img src={viewIcon} alt="View" className="w-4 h-4 brightness-0 invert" />
                     </button>
-                    <button className="cursor-pointer w-9 h-9 rounded-lg bg-[#3563E9] flex items-center justify-center hover:bg-[#2d56d4] transition-colors shadow-sm">
+                    <button
+                        type="button"
+                        onClick={() => navigate('/consumer-payment-form')}
+                        className="cursor-pointer w-9 h-9 rounded-lg bg-[#3563E9] flex items-center justify-center hover:bg-[#2d56d4] transition-colors shadow-sm"
+                    >
                         <img src={deleteIcon} alt="Delete" className="w-4 h-4 brightness-0 invert" />
                     </button>
                 </div>

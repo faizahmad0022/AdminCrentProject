@@ -1,4 +1,5 @@
 "use client";
+import { useNavigate } from 'react-router-dom';
 import tyreimg from '../../assets/tyreimg.png';
 import { Upload, Check, ChevronDown } from 'lucide-react';
 import BookingHeaderCard from '../../components/BookingHeaderCard';
@@ -14,9 +15,11 @@ const conditions = [
 ];
 
 const Inspection = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="bg-[#F8FAFC] p-10">
-      <BookingHeaderCard />
+    <div className="bg-[#F8FAFC] ">
+      <BookingHeaderCard onPrevious={() => navigate('/additional-payment-form')} />
       <div 
         className="mt-20 w-full min-h-screen py-10 px-4 md:px-8 lg:px-12"
         style={{

@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from 'react';
+// 1. Import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import { 
   Phone, 
   Mail, 
@@ -11,15 +13,17 @@ import {
   X 
 } from 'lucide-react';
 
-// Import images from your assets folder
 import smalllookcar from '../../assets/smalllookcar.png'; 
 import lineimges from '../../assets/lineimges.png';
 
 const CarAlertResponse = () => {
   const [isVisible, setIsVisible] = useState(true);
+  
+  // 2. Initialize navigate
+  const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-[#F6F7F9] p-4 md:p-8 font-sans text-slate-800">
+    <div className="bg-[#F6F7F9] font-sans text-slate-800 ">
       <div className="max-w-5xl mx-auto space-y-6">
         
         {/* Top Toaster Alert */}
@@ -30,26 +34,37 @@ const CarAlertResponse = () => {
                 <X className="text-white w-6 h-6 stroke-[3px]" />
               </div>
               <div>
-                <h2 className="text-xl font-bold text-slate-900 leading-tight">No Payment</h2>
-                <p className="text-sm text-slate-500 font-medium">Customer failed to make the required payment</p>
+                <h2 className="text-xl font-bold text-slate-900 leading-tight">No answering calls</h2>
+                <p className="text-sm text-slate-500 font-medium">Customer is not responding to calls or messages</p>
                 <p className="text-xs text-slate-400 mt-1">10 mins ago</p>
               </div>
             </div>
             
             <div className="flex items-center gap-4">
               <div className="flex gap-2">
-                <button className="p-2.5 bg-[#3563E9] rounded-xl text-white hover:bg-blue-700 transition-all">
+                {/* Redirects to Inbox */}
+                <button 
+                  onClick={() => navigate("/inbox")}
+                  className="p-2.5 bg-[#3563E9] rounded-xl text-white hover:bg-blue-700 transition-all shadow-sm"
+                >
                   <Mail size={20} />
                 </button>
-                <button className="p-2.5 bg-[#3563E9] rounded-xl text-white hover:bg-blue-700 transition-all">
+                <button 
+                  onClick={() => navigate("/inbox")}
+                  className="p-2.5 bg-[#3563E9] rounded-xl text-white hover:bg-blue-700 transition-all shadow-sm"
+                >
                   <MessageSquare size={20} />
                 </button>
               </div>
-              <button className="bg-[#3563E9] text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-sm whitespace-nowrap">
+              
+              {/* Take Action Redirection */}
+              <button 
+                onClick={() => navigate("/additional-payment-form")} 
+                className="bg-[#3563E9] text-white px-7 py-3 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-sm whitespace-nowrap"
+              >
                 Take an Action
               </button>
               
-              {/* Optional: Close icon to hide the toaster */}
               <button 
                 onClick={() => setIsVisible(false)}
                 className="absolute top-2 right-2 text-slate-400 hover:text-slate-600 transition-colors"
@@ -60,22 +75,36 @@ const CarAlertResponse = () => {
           </div>
         )}
 
-        {/* Floating Action Buttons */}
+        {/* Floating Action Buttons Toolbar - REDIRECTS TO INBOX */}
         <div className="flex gap-3">
-          <button className="p-3 bg-[#3563E9] rounded-lg text-white shadow-md hover:bg-blue-700 transition-colors"><Phone size={20} /></button>
-          <button className="p-3 bg-[#3563E9] rounded-lg text-white shadow-md hover:bg-blue-700 transition-colors"><Mail size={20} /></button>
-          <button className="p-3 bg-[#3563E9] rounded-lg text-white shadow-md hover:bg-blue-700 transition-colors"><Plus size={20} /></button>
-          <button className="p-3 bg-[#3563E9] rounded-lg text-white shadow-md hover:bg-blue-700 transition-colors"><Calendar size={20} /></button>
+          <button 
+            onClick={() => navigate("/inbox")}
+            className="p-3 bg-[#3563E9] rounded-lg text-white shadow-md hover:bg-blue-700 transition-colors"
+          >
+            <Phone size={20} />
+          </button>
+          <button 
+            onClick={() => navigate("/inbox")}
+            className="p-3 bg-[#3563E9] rounded-lg text-white shadow-md hover:bg-blue-700 transition-colors"
+          >
+            <Mail size={20} />
+          </button>
+          <button className="p-3 bg-[#3563E9] rounded-lg text-white shadow-md hover:bg-blue-700 transition-colors">
+            <Plus size={20} />
+          </button>
+          <button className="p-3 bg-[#3563E9] rounded-lg text-white shadow-md hover:bg-blue-700 transition-colors">
+            <Calendar size={20} />
+          </button>
         </div>
 
         {/* Main Details Card */}
-        <div className="bg-white rounded-[20px] p-8 shadow-sm">
+        <div className="bg-white rounded-[20px] p-8 shadow-sm border border-slate-100">
           <h3 className="text-xl font-bold mb-8 text-slate-900">Details Rental</h3>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             
-            {/* Map Placeholder Section */}
-            <div className="relative bg-[#f8f9fb] rounded-2xl overflow-hidden min-h-87.5 border border-slate-100">
+            {/* Map Section */}
+            <div className="relative bg-[#f8f9fb] rounded-2xl overflow-hidden min-h-[350px] border border-slate-100">
                <svg viewBox="0 0 400 300" className="w-full h-full opacity-60">
                   <rect width="400" height="300" fill="#f0f2f5" />
                   <path d="M0 50 L400 50 M0 150 L400 150 M0 250 L400 250 M100 0 L100 300 M250 0 L250 300" stroke="#fff" strokeWidth="8" />
@@ -91,7 +120,6 @@ const CarAlertResponse = () => {
               
               {/* Car Info Header */}
               <div className="flex items-center gap-6 mb-8">
-                {/* Car Background Container */}
                 <div className="w-40 h-28 bg-[#3563E9] rounded-xl relative overflow-hidden flex items-center justify-center shadow-lg">
                    <img 
                     src={lineimges} 
@@ -113,36 +141,12 @@ const CarAlertResponse = () => {
                 </div>
               </div>
 
-              {/* Booking Fields */}
+              {/* Detail Items */}
               <div className="space-y-10">
-                {/* Pick-Up Section */}
-                <div>
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="w-5 h-5 rounded-full border-[5px] border-blue-100 bg-[#3563E9]"></div>
-                    <span className="font-bold text-lg text-slate-900">Pick – Up</span>
-                  </div>
-                  <div className="grid grid-cols-3 gap-6">
-                    <DetailItem label="Locations" value="Kota Semarang" />
-                    <DetailItem label="Date" value="20 July 2022" />
-                    <DetailItem label="Time" value="07.00" />
-                  </div>
-                </div>
-
-                {/* Drop-Off Section */}
-                <div className="pt-2">
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="w-5 h-5 rounded-full border-[5px] border-sky-100 bg-[#54A6FF]"></div>
-                    <span className="font-bold text-lg text-slate-900">Drop – Off</span>
-                  </div>
-                  <div className="grid grid-cols-3 gap-6">
-                    <DetailItem label="Locations" value="Kota Semarang" />
-                    <DetailItem label="Date" value="21 July 2022" />
-                    <DetailItem label="Time" value="01.00" />
-                  </div>
-                </div>
+                <DetailSection title="Pick – Up" color="#3563E9" borderColor="border-blue-100" />
+                <DetailSection title="Drop – Off" color="#54A6FF" borderColor="border-sky-100" />
               </div>
 
-              {/* Pricing Divider */}
               <div className="h-px bg-slate-100 w-full mt-10 mb-8"></div>
 
               {/* Total Price Section */}
@@ -162,13 +166,27 @@ const CarAlertResponse = () => {
   );
 };
 
-// Reusable Sub-component for Location/Date/Time
+// Reusable Sub-components
+const DetailSection = ({ title, color, borderColor }) => (
+  <div>
+    <div className="flex items-center gap-3 mb-5">
+      <div className={`w-5 h-5 rounded-full border-[5px] ${borderColor}`} style={{ backgroundColor: color }}></div>
+      <span className="font-bold text-lg text-slate-900">{title}</span>
+    </div>
+    <div className="grid grid-cols-3 gap-6">
+      <DetailItem label="Locations" value="Kota Semarang" />
+      <DetailItem label="Date" value="20 July 2022" />
+      <DetailItem label="Time" value="07.00" />
+    </div>
+  </div>
+);
+
 const DetailItem = ({ label, value }) => (
   <div className="space-y-2">
     <p className="text-base font-bold text-slate-900">{label}</p>
-    <div className="flex items-center justify-between group cursor-pointer border-r border-transparent hover:border-slate-200 transition-all pr-2">
+    <div className="flex items-center justify-between group cursor-pointer pr-2">
       <span className="text-sm text-slate-400 font-semibold">{value}</span>
-      <ChevronDown size={18} className="text-slate-400 group-hover:text-slate-600 transition-colors" />
+      <ChevronDown size={18} className="text-slate-400" />
     </div>
   </div>
 );

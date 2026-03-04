@@ -65,7 +65,7 @@ const SelectVehicle = () => {
                 <div className="flex items-center gap-2 sm:gap-3 w-full lg:w-auto justify-end flex-shrink-0">
                     <button 
                         onClick={() => navigate("/booking-crent-car"        )} 
-                        className="cursor-pointer flex-1 sm:flex-none min-w-0 px-4 sm:px-6 lg:px-10 py-2 sm:py-2.5 rounded-lg bg-[#E0E7FF] text-[#1F2937] font-semibold text-[13px] sm:text-[14px] hover:bg-blue-100 transition-colors"
+                        className="cursor-pointer flex-1 sm:flex-none min-w-0 px-4 sm:px-6 lg:px-10 py-2 sm:py-2.5 rounded-lg bg-[#E0E7FF] text-[#1A202C] font-semibold text-[13px] sm:text-[14px] hover:bg-blue-100 transition-colors"
                     >
                         Previous
                     </button>
@@ -81,10 +81,10 @@ const SelectVehicle = () => {
             {/* 2. Responsive Cards Container */}
             <div className="max-w-7xl mx-auto space-y-3 sm:space-y-4 lg:space-y-6">
                 <div className="grid grid-cols-1 gap-3 sm:gap-4 lg:gap-6">
-                    <VehicleCard car={carData} />
-                    <VehicleCard car={carData} />
-                    <VehicleCard car={carData} />
-                    <VehicleCard car={carData} />
+                    <VehicleCard car={carData} carId={1} />
+                    <VehicleCard car={carData} carId={2} />
+                    <VehicleCard car={carData} carId={3} />
+                    <VehicleCard car={carData} carId={4} />
                 </div>
             </div>
         </div>

@@ -12,7 +12,7 @@ import {
 
 const CallScreenProfile = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-slate-100 p-4 font-sans">
+    <div className="flex items-center justify-center bg-slate-100 font-sans">
       <div className="relative w-full max-w-4xl aspect-4/3 bg-[#5D646F] rounded-4xl flex flex-col items-center justify-center shadow-2xl overflow-hidden">
 
         <button className="absolute top-8 left-8 text-white hover:opacity-70 transition-opacity">

@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from 'react';
+// 1. Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import { 
   Phone, 
   Mail, 
@@ -16,11 +18,15 @@ import lineimges from "../../assets/lineimges.png";
 
 const BookingReturnCondition = () => {
   const [showToast, setShowToast] = useState(true);
+  
+  // 2. Initialize navigate
+  const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-[#F6F7F9] p-4 md:p-8 font-sans text-slate-800">
+    <div className="bg-[#F6F7F9] font-sans text-slate-800">
       <div className="max-w-5xl mx-auto space-y-6">
 
+        {/* TOASTER ALERT */}
         {showToast && (
           <div className="bg-[#FFF5F5] border border-[#FF4D4D] rounded-xl p-4 flex flex-col md:flex-row items-center justify-between gap-4 shadow-md animate-in fade-in slide-in-from-top-2 relative">
             <div className="flex items-center gap-4">
@@ -36,14 +42,26 @@ const BookingReturnCondition = () => {
             
             <div className="flex items-center gap-4">
               <div className="flex gap-2">
-                <button className="p-2.5 bg-[#3563E9] rounded-xl text-white hover:bg-blue-700 transition-all">
+                {/* Redirects to Inbox */}
+                <button 
+                  onClick={() => navigate("/inbox")}
+                  className="p-2.5 bg-[#3563E9] rounded-xl text-white hover:bg-blue-700 transition-all shadow-sm"
+                >
                   <Mail size={20} />
                 </button>
-                <button className="p-2.5 bg-[#3563E9] rounded-xl text-white hover:bg-blue-700 transition-all">
+                <button 
+                  onClick={() => navigate("/inbox")}
+                  className="p-2.5 bg-[#3563E9] rounded-xl text-white hover:bg-blue-700 transition-all shadow-sm"
+                >
                   <MessageSquare size={20} />
                 </button>
               </div>
-              <button className="bg-[#3563E9] text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-sm whitespace-nowrap">
+              
+              {/* Redirects to Payment Action */}
+              <button 
+                onClick={() => navigate("/additional-payment-form")}
+                className="bg-[#3563E9] text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-sm whitespace-nowrap"
+              >
                 Take and action
               </button>
               
@@ -57,18 +75,36 @@ const BookingReturnCondition = () => {
           </div>
         )}
 
+        {/* TOOLBAR BUTTONS - REDIRECTS TO INBOX */}
         <div className="flex gap-3">
-          <button className="p-3 bg-[#3563E9] rounded-lg text-white shadow-md hover:bg-blue-700 transition-colors"><Phone size={20} /></button>
-          <button className="p-3 bg-[#3563E9] rounded-lg text-white shadow-md hover:bg-blue-700 transition-colors"><Mail size={20} /></button>
-          <button className="p-3 bg-[#3563E9] rounded-lg text-white shadow-md hover:bg-blue-700 transition-colors"><Plus size={20} /></button>
-          <button className="p-3 bg-[#3563E9] rounded-lg text-white shadow-md hover:bg-blue-700 transition-colors"><Calendar size={20} /></button>
+          <button 
+            onClick={() => navigate("/inbox")}
+            className="p-3 bg-[#3563E9] rounded-lg text-white shadow-md hover:bg-blue-700 transition-colors"
+          >
+            <Phone size={20} />
+          </button>
+          <button 
+            onClick={() => navigate("/inbox")}
+            className="p-3 bg-[#3563E9] rounded-lg text-white shadow-md hover:bg-blue-700 transition-colors"
+          >
+            <Mail size={20} />
+          </button>
+          <button className="p-3 bg-[#3563E9] rounded-lg text-white shadow-md hover:bg-blue-700 transition-colors">
+            <Plus size={20} />
+          </button>
+          <button className="p-3 bg-[#3563E9] rounded-lg text-white shadow-md hover:bg-blue-700 transition-colors">
+            <Calendar size={20} />
+          </button>
         </div>
         
-        <div className="bg-white rounded-[20px] p-8 shadow-sm">
+        {/* DETAILS CARD */}
+        <div className="bg-white rounded-[20px] p-8 shadow-sm border border-slate-100">
           <h3 className="text-xl font-bold mb-8 text-slate-900">Details Rental</h3>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="relative bg-[#f8f9fb] rounded-2xl overflow-hidden min-h-87.5 border border-slate-100">
+            
+            {/* Map Placeholder */}
+            <div className="relative bg-[#f8f9fb] rounded-2xl overflow-hidden min-h-[350px] border border-slate-100">
                <svg viewBox="0 0 400 300" className="w-full h-full opacity-60">
                   <rect width="400" height="300" fill="#f0f2f5" />
                   <path d="M0 50 L400 50 M0 150 L400 150 M0 250 L400 250 M100 0 L100 300 M250 0 L250 300" stroke="#fff" strokeWidth="8" />
@@ -79,9 +115,11 @@ const BookingReturnCondition = () => {
                </svg>
             </div>
 
+            {/* Information Section */}
             <div className="flex flex-col justify-between">
+              
               <div className="flex items-center gap-6 mb-8">
-                <div className="w-40 h-28 flex items-center justify-center">
+                <div className="w-40 h-28 bg-[#3563E9] rounded-xl relative overflow-hidden flex items-center justify-center shadow-lg">
                    <img 
                     src={lineimges} 
                     alt="" 
@@ -95,7 +133,7 @@ const BookingReturnCondition = () => {
                 </div>
                 <div>
                   <div className="flex items-center gap-3">
-                    <h4 className="text-2xl font-bold tracking-tight text-slate-900 leading-none">Nissan GT – R</h4>
+                    <h4 className="text-2xl font-bold tracking-tight text-slate-900">Nissan GT – R</h4>
                     <span className="text-slate-400 font-semibold text-base">#9761</span>
                   </div>
                   <p className="text-slate-500 font-medium text-lg mt-2">Sport Car</p>
@@ -103,29 +141,8 @@ const BookingReturnCondition = () => {
               </div>
 
               <div className="space-y-10">
-                <div>
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="w-5 h-5 rounded-full border-[5px] border-blue-100 bg-[#3563E9]"></div>
-                    <span className="font-bold text-lg text-slate-900">Pick – Up</span>
-                  </div>
-                  <div className="grid grid-cols-3 gap-6">
-                    <DetailItem label="Locations" value="Kota Semarang" />
-                    <DetailItem label="Date" value="20 July 2022" />
-                    <DetailItem label="Time" value="07.00" />
-                  </div>
-                </div>
-
-                <div className="pt-2">
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="w-5 h-5 rounded-full border-[5px] border-sky-100 bg-[#54A6FF]"></div>
-                    <span className="font-bold text-lg text-slate-900">Drop – Off</span>
-                  </div>
-                  <div className="grid grid-cols-3 gap-6">
-                    <DetailItem label="Locations" value="Kota Semarang" />
-                    <DetailItem label="Date" value="21 July 2022" />
-                    <DetailItem label="Time" value="01.00" />
-                  </div>
-                </div>
+                <BookingSection title="Pick – Up" color="#3563E9" borderColor="border-blue-100" />
+                <BookingSection title="Drop – Off" color="#54A6FF" borderColor="border-sky-100" />
               </div>
 
               <div className="h-px bg-slate-100 w-full mt-10 mb-8"></div>
@@ -144,6 +161,21 @@ const BookingReturnCondition = () => {
     </div>
   );
 };
+
+// Reusable Section Component
+const BookingSection = ({ title, color, borderColor }) => (
+  <div>
+    <div className="flex items-center gap-3 mb-5">
+      <div className={`w-5 h-5 rounded-full border-[5px] ${borderColor}`} style={{ backgroundColor: color }}></div>
+      <span className="font-bold text-lg text-slate-900">{title}</span>
+    </div>
+    <div className="grid grid-cols-3 gap-6">
+      <DetailItem label="Locations" value="Kota Semarang" />
+      <DetailItem label="Date" value="20 July 2022" />
+      <DetailItem label="Time" value="07.00" />
+    </div>
+  </div>
+);
 
 const DetailItem = ({ label, value }) => (
   <div className="space-y-2">

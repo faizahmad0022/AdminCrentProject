@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -15,6 +16,7 @@ const SAMPLE_EVENTS = [
 const TIME_SLOTS = ['09:20 AM', '09:20 AM', '09:20 AM', '09:20 AM', '', ''];
 
 const Calendar = () => {
+  const navigate = useNavigate();
   const [currentDate, setCurrentDate] = useState(new Date(2025, 7, 1));
   const monthName = MONTHS[currentDate.getMonth()];
   const year = currentDate.getFullYear();
@@ -66,11 +68,15 @@ const Calendar = () => {
                     if (eventHere) {
                       return (
                         <td key={`${rowIndex}-${colIndex}`} className="border border-[#E5E7EB] p-1 align-top bg-white" colSpan={eventHere.span}>
-                          <div className="bg-[#d6e4fd] rounded-lg pl-2 pr-2 py-1.5 text-xs leading-tight text-[#101828] space-y-0.5 border-l-[3px] border-l-[#4771ea]">
+                          <button
+                            type="button"
+                            onClick={() => navigate(`/booking/${eventHere.id}`)}
+                            className="w-full text-left bg-[#d6e4fd] rounded-lg pl-2 pr-2 py-1.5 text-xs leading-tight text-[#101828] space-y-0.5 border-l-[3px] border-l-[#4771ea] hover:bg-[#c5d5fc] transition-colors cursor-pointer"
+                          >
                             <p className="font-bold text-[#101828]">{eventHere.bookingId}</p>
                             <p className="text-gray-700 text-xs">{eventHere.client}</p>
                             <p className="text-[#101828]/80 text-[11px] pt-0.5">{eventHere.dates}</p>
-                          </div>
+                          </button>
                         </td>
                       );
                     }

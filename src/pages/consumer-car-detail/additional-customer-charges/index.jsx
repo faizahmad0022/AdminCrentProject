@@ -13,20 +13,20 @@ import {
   X 
 } from 'lucide-react';
 
-import smalllookcar from '../../assets/smalllookcar.png'; 
-import lineimges from '../../assets/lineimges.png';
+// Fixed paths: moving up 3 levels to reach src/assets
+import smalllookcar from '../../../assets/smalllookcar.png'; 
+import lineimges from '../../../assets/lineimges.png';
 
-const CarRefactorDemage = () => {
+const AdditionalCustomerCharges = () => {
   const [showToast, setShowToast] = useState(true);
-  
   // 2. Initialize navigate
   const navigate = useNavigate();
 
   return (
-    <div className="bg-[#F6F7F9] font-sans text-slate-800 p-4 md:p-8 min-h-screen">
+    <div className="bg-[#F6F7F9] font-sans text-slate-800 ">
       <div className="max-w-5xl mx-auto space-y-6">
         
-        {/* TOASTER ALERT */}
+        {/* TOASTER: Refuse to pay extra kilometers fee */}
         {showToast && (
           <div className="bg-[#FFF5F5] border border-[#FF4D4D] rounded-xl p-4 flex flex-col md:flex-row items-center justify-between gap-4 shadow-md animate-in fade-in slide-in-from-top-2 relative">
             <div className="flex items-center gap-4">
@@ -34,8 +34,8 @@ const CarRefactorDemage = () => {
                 <X className="text-white w-6 h-6 stroke-[3px]" />
               </div>
               <div>
-                <h2 className="text-xl font-bold text-slate-900 leading-tight">Return car with damages</h2>
-                <p className="text-sm text-slate-500 font-medium">Vehicle returned with noticeable damages</p>
+                <h2 className="text-xl font-bold text-slate-900 leading-tight">Refuse to pay extra kilometers fee</h2>
+                <p className="text-sm text-slate-500 font-medium">Customer declined to pay additional kilometer charges</p>
                 <p className="text-xs text-slate-400 mt-1">10 mins ago</p>
               </div>
             </div>
@@ -57,12 +57,12 @@ const CarRefactorDemage = () => {
                 </button>
               </div>
               
-              {/* Redirects to Additional Payment Form */}
+              {/* Redirects to Payment Form */}
               <button 
                 onClick={() => navigate("/additional-payment-form")}
                 className="bg-[#3563E9] text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-sm whitespace-nowrap"
               >
-                Take an action
+                Take and action
               </button>
               
               <button 
@@ -75,7 +75,7 @@ const CarRefactorDemage = () => {
           </div>
         )}
 
-        {/* TOOLBAR BUTTONS - REDIRECTS TO INBOX */}
+        {/* Toolbar Buttons - REDIRECTS TO INBOX */}
         <div className="flex gap-3">
           <button 
             onClick={() => navigate("/inbox")}
@@ -97,7 +97,7 @@ const CarRefactorDemage = () => {
           </button>
         </div>
 
-        {/* DETAILS CARD */}
+        {/* Details Card */}
         <div className="bg-white rounded-[20px] p-8 shadow-sm border border-slate-100">
           <h3 className="text-xl font-bold mb-8 text-slate-900">Details Rental</h3>
           
@@ -120,8 +120,16 @@ const CarRefactorDemage = () => {
               
               <div className="flex items-center gap-6 mb-8">
                 <div className="w-40 h-28 bg-[#3563E9] rounded-xl relative overflow-hidden flex items-center justify-center shadow-lg">
-                   <img src={lineimges} alt="" className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay" />
-                   <img src={smalllookcar} alt="Nissan GT-R" className="w-30 h-auto object-contain z-10 drop-shadow-2xl" />
+                   <img 
+                    src={lineimges} 
+                    alt="" 
+                    className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay" 
+                   />
+                   <img 
+                    src={smalllookcar} 
+                    alt="Nissan GT-R" 
+                    className="w-[120px] h-auto object-contain z-10 drop-shadow-2xl" 
+                   />
                 </div>
                 <div>
                   <div className="flex items-center gap-3">
@@ -132,22 +140,20 @@ const CarRefactorDemage = () => {
                 </div>
               </div>
 
-              {/* Selection Fields */}
               <div className="space-y-10">
                 <BookingSection title="Pick – Up" color="#3563E9" borderColor="border-blue-100" />
                 <BookingSection title="Drop – Off" color="#54A6FF" borderColor="border-sky-100" />
               </div>
 
-              <div className="h-px bg-slate-100 w-full mt-10 mb-8"></div>
+              <div className="h-[1px] bg-slate-100 w-full mt-10 mb-8"></div>
 
               <div className="flex items-end justify-between">
                 <div>
-                  <p className="text-2xl font-bold text-slate-900">Total Rental Price</p>
+                  <p className="text-2xl font-bold text-slate-900 leading-tight">Total Rental Price</p>
                   <p className="text-sm text-slate-400 font-medium mt-1">Overall price and includes rental discount</p>
                 </div>
-                <div className="text-[52px] font-bold text-slate-900">$80.00</div>
+                <div className="text-[52px] font-bold text-slate-900 leading-none tracking-tight">$80.00</div>
               </div>
-
             </div>
           </div>
         </div>
@@ -173,11 +179,11 @@ const BookingSection = ({ title, color, borderColor }) => (
 const DetailItem = ({ label, value }) => (
   <div className="space-y-2">
     <p className="text-base font-bold text-slate-900">{label}</p>
-    <div className="flex items-center justify-between cursor-pointer pr-2">
+    <div className="flex items-center justify-between group cursor-pointer pr-2">
       <span className="text-sm text-slate-400 font-semibold">{value}</span>
       <ChevronDown size={18} className="text-slate-400" />
     </div>
   </div>
 );
 
-export default CarRefactorDemage;
+export default AdditionalCustomerCharges;
