@@ -26,6 +26,14 @@ import AdditionalPaymentForm from './pages/additional-payment-form';
 import CustomerProfileDocument from './pages/customer-profile-document';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import InspectionPdfScreen from './pages/inspaction-pdf-screen';
+import CarBookingAlert from './pages/car-alert-no-payment';
+import CarAlertResponse from './pages/car-alert-no-answering';
+import CarRefactorDemage from './pages/car-refactor-demage';
+import AdditionalCustomerCharges from './pages/consumer-car-detail/additional-customer-charges';
+import BookingReturnCondition from './pages/booking-return-condition';
+import ActionCustomerCar from './pages/action-customer-car';
+import CallScreenProfile from './pages/call-screen-profile';
+
 
 function App() {
   return (
@@ -58,6 +66,13 @@ function App() {
           <Route path="document-car-detail" element={<DocumentCarDetail />} />
           <Route path="consumer-payment-form" element={<ConsumerPaymentForm />} />
           <Route path="inspection-pdf-screen" element={<InspectionPdfScreen />} />
+          <Route path="car-alert-no-payment" element={<CarBookingAlert />} />
+          <Route path="car-alert-no-answering" element={<CarAlertResponse />} />
+          <Route path="car-refactor-demage" element={<CarRefactorDemage />} />
+          <Route path="additional-customer-charges" element={<AdditionalCustomerCharges />} />
+          <Route path="booking-return-condition" element={<BookingReturnCondition />} />
+          <Route path="action-customer-car" element={<ActionCustomerCar />} />
+          <Route path="call-screen-profile" element={<CallScreenProfile />} />
         </Route>
       </Routes>
     </Router>
